@@ -4,7 +4,7 @@
 if [ "$#" -ne 2 ]
 then
     echo "Compares to files line by line to search for unique or duplicate lines."
-    echo "Please two filenames names to be compared line by line."
+    echo "Please supply two filenames names to be compared line by line."
     exit 1
 fi
 
@@ -14,7 +14,7 @@ B=$2
 
 PID=$$
 
-echo ".. for each fule, ensuring only unique lines are used.."
+echo ".. for each file, ensuring only unique lines are used.."
 # and normalize line endings
 cat $A | tr -d '\r' | sort | uniq > compare_normal_a_$PID
 cat $B | tr -d '\r' | sort | uniq > compare_normal_b_$PID
